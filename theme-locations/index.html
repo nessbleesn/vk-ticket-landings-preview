@@ -6,7 +6,7 @@
   <meta name="description" content="8 тематических локаций Парка «Сказка» в одном билете. Тариф на будни и выходные с прямым переходом к оплате.">
   <meta name="theme-color" content="#173e3a">
   <title>Тематические локации Парка «Сказка»</title>
-  <link rel="preload" href="assets/hero-poster.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/hero-safari.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script src="tracking-config.js"></script>
   <script src="script.js" defer></script>
@@ -26,17 +26,27 @@
     <section class="hero" aria-labelledby="theme-title">
       <div class="hero-copy reveal">
         <p class="eyebrow">Один билет для сопровождения</p>
-        <h1 id="theme-title"><span>8</span> тематических локаций в одном билете</h1>
+        <h1 id="theme-title"><span class="title-number">8</span><span class="title-words">тематических локаций в одном билете</span></h1>
         <p class="hero-lead">Динозавры, животные и птицы — собирайте свой маршрут без отдельного билета в каждую включённую локацию.</p>
       </div>
 
-      <div class="film-frame reveal" data-reveal-delay="1">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.webp" aria-label="Прогулка по Парку Сказка">
-          <source src="assets/park-day.mp4" type="video/mp4">
-        </video>
-        <button class="video-toggle" type="button" aria-pressed="false" aria-label="Остановить видео">
-          <span aria-hidden="true">Ⅱ</span><span class="video-toggle-text">Пауза</span>
-        </button>
+      <div class="park-collage reveal" data-reveal-delay="1" aria-label="Фотографии тематических парков">
+        <figure class="park-shot park-shot--safari">
+          <img src="assets/hero-safari.webp" alt="Гости отправляются в Дино Сафари" width="1800" height="1200" fetchpriority="high">
+          <figcaption>Дино Сафари</figcaption>
+        </figure>
+        <figure class="park-shot park-shot--dino">
+          <img src="assets/hero-dino.webp" alt="Динозавр в Дино Парке" width="1800" height="1200">
+          <figcaption>Дино Парк</figcaption>
+        </figure>
+        <figure class="park-shot park-shot--aviarium">
+          <img src="assets/hero-aviarium.webp" alt="Сова в Авиариуме" width="1800" height="1003">
+          <figcaption>Авиариум</figcaption>
+        </figure>
+        <figure class="park-shot park-shot--alpaca">
+          <img src="assets/hero-alpaca.webp" alt="Альпаки в Альпака Парке" width="1800" height="1208">
+          <figcaption>Альпака Парк</figcaption>
+        </figure>
         <div class="film-stamp"><span>8</span><small>точек маршрута</small></div>
       </div>
 

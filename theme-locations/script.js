@@ -44,29 +44,3 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
-
-const video = document.querySelector(".hero-video");
-const videoToggle = document.querySelector(".video-toggle");
-
-const setVideoState = (isPlaying) => {
-  videoToggle.setAttribute("aria-pressed", String(!isPlaying));
-  videoToggle.setAttribute("aria-label", isPlaying ? "Остановить видео" : "Включить видео");
-  videoToggle.querySelector("[aria-hidden]").textContent = isPlaying ? "Ⅱ" : "▶";
-  videoToggle.querySelector(".video-toggle-text").textContent = isPlaying ? "Пауза" : "Смотреть";
-};
-
-if (video && videoToggle) {
-  if (reducedMotion.matches) {
-    video.pause();
-    setVideoState(false);
-  }
-  videoToggle.addEventListener("click", async () => {
-    if (video.paused) {
-      await video.play();
-      setVideoState(true);
-    } else {
-      video.pause();
-      setVideoState(false);
-    }
-  });
-}

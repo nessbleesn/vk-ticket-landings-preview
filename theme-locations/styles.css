@@ -1,0 +1,400 @@
+:root {
+  --forest: #163c38;
+  --forest-deep: #0d2d2a;
+  --leaf: #52c792;
+  --leaf-pale: #dff5e8;
+  --sky: #d9f1fb;
+  --paper: #fff8e9;
+  --tangerine: #ff7041;
+  --sun: #ffd558;
+  --white: #ffffff;
+  --ink-soft: #53635f;
+  --line: rgba(22, 60, 56, 0.17);
+  --shadow: 0 24px 60px rgba(13, 45, 42, 0.22);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--forest-deep);
+  background: var(--paper);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+:focus-visible {
+  outline: 4px solid var(--sun);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 12px;
+  left: 12px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  color: var(--white);
+  background: var(--forest-deep);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link:focus {
+  width: auto;
+  height: auto;
+  padding: 10px 16px;
+  overflow: visible;
+  clip-path: none;
+}
+
+.site-header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 50%;
+  display: grid;
+  grid-template-columns: 170px 1fr auto;
+  align-items: center;
+  width: min(1240px, calc(100% - 48px));
+  min-height: 92px;
+  color: var(--white);
+  transform: translateX(-50%);
+}
+
+.brand { display: inline-flex; width: fit-content; }
+.brand img { width: 146px; height: auto; filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.18)); }
+.header-note { margin: 0; color: rgba(255, 255, 255, 0.74); font-size: 14px; text-align: center; }
+
+.header-buy,
+.closing-cta a {
+  padding: 12px 20px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.header-buy:hover { color: var(--forest); background: var(--white); transform: translateY(-2px); }
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(520px, 1.4fr);
+  grid-template-areas:
+    "copy film"
+    "tariffs tariffs"
+    "note note";
+  gap: 24px 44px;
+  align-items: center;
+  min-height: 100svh;
+  padding: 126px max(24px, calc((100vw - 1240px) / 2)) 34px;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(82, 199, 146, 0.32) 0 14%, transparent 14.4%),
+    linear-gradient(142deg, var(--forest-deep), var(--forest) 70%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: -100px;
+  width: 240px;
+  height: 430px;
+  border: 2px dashed rgba(255, 213, 88, 0.44);
+  border-radius: 50%;
+  transform: rotate(18deg);
+}
+
+.hero-copy { z-index: 1; grid-area: copy; }
+.eyebrow { margin: 0 0 12px; color: var(--tangerine); font: 900 13px/1 "Trebuchet MS", Arial, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; }
+.hero .eyebrow { color: var(--sun); }
+
+h1, h2, h3, p { text-wrap: pretty; }
+h1, h2, h3 { margin: 0; font-family: "Trebuchet MS", Arial, sans-serif; letter-spacing: -0.035em; }
+
+h1 { max-width: 11ch; font-size: clamp(43px, 5.4vw, 78px); line-height: 0.98; }
+h1 span { color: var(--sun); font-size: 1.28em; line-height: 0.6; }
+.hero-lead { max-width: 42ch; margin: 22px 0 0; color: rgba(255, 255, 255, 0.77); font-size: clamp(17px, 1.35vw, 21px); }
+
+.film-frame {
+  position: relative;
+  z-index: 1;
+  grid-area: film;
+  overflow: hidden;
+  border: 7px solid rgba(255, 255, 255, 0.94);
+  border-radius: 48% 52% 18px 18px / 18% 18% 28px 28px;
+  background: #091f1d;
+  box-shadow: var(--shadow);
+}
+
+.hero-video { width: 100%; height: clamp(370px, 49vh, 540px); object-fit: cover; object-position: 50% 48%; }
+.film-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(5, 24, 22, 0.64)); pointer-events: none; }
+
+.video-toggle {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--forest-deep);
+  background: rgba(255, 255, 255, 0.9);
+  font: 800 13px/1 "Segoe UI", sans-serif;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.film-stamp {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  place-items: center;
+  width: 116px;
+  aspect-ratio: 1;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  color: var(--forest-deep);
+  background: var(--sun);
+  transform: rotate(-6deg);
+}
+
+.film-stamp span { font: 900 52px/0.72 "Trebuchet MS", sans-serif; }
+.film-stamp small { max-width: 70px; font-size: 10px; font-weight: 900; line-height: 1.05; text-align: center; text-transform: uppercase; }
+
+.tariff-strip {
+  position: relative;
+  z-index: 2;
+  grid-area: tariffs;
+  display: grid;
+  grid-template-columns: 1fr minmax(210px, 0.45fr) minmax(210px, 0.45fr);
+  gap: 12px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 26px;
+  color: var(--forest-deep);
+  background: var(--paper);
+  box-shadow: 0 18px 45px rgba(5, 24, 22, 0.28);
+}
+
+.tariff-copy { padding: 0 12px; }
+.tariff-copy span { display: block; color: var(--tangerine); font-size: 12px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.tariff-copy strong { display: block; margin-top: 4px; font: 900 clamp(21px, 2vw, 30px)/1.05 "Trebuchet MS", sans-serif; }
+
+.price-button {
+  display: grid;
+  min-height: 70px;
+  padding: 12px 17px;
+  border: 2px solid var(--tangerine);
+  border-radius: 18px;
+  color: var(--white);
+  background: var(--tangerine);
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.price-button span { font-size: 12px; font-weight: 800; opacity: 0.9; }
+.price-button strong { font: 900 clamp(20px, 1.7vw, 25px)/1.05 "Trebuchet MS", sans-serif; }
+.price-button--weekend { border-color: var(--forest); background: var(--forest); }
+.price-button:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(255, 112, 65, 0.25); }
+.price-button--weekend:hover { box-shadow: 0 10px 22px rgba(22, 60, 56, 0.25); }
+
+.payment-note { z-index: 1; grid-area: note; margin: 0; color: rgba(255, 255, 255, 0.62); font-size: 13px; text-align: center; }
+
+.trail { position: relative; min-height: 100svh; padding: 86px max(24px, calc((100vw - 1240px) / 2)) 64px; background: var(--paper); }
+.trail-heading { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: end; margin-bottom: 40px; }
+.trail-heading h2 { max-width: 17ch; font-size: clamp(37px, 4.8vw, 70px); line-height: 0.98; }
+.trail-heading > p { max-width: 38ch; margin: 0 0 8px; color: var(--ink-soft); }
+
+.trail-board { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; min-height: 415px; padding-top: 62px; }
+.trail-line { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.trail-line path { fill: none; stroke: var(--tangerine); stroke-width: 7; stroke-dasharray: 2 18; stroke-linecap: round; }
+
+.place-card {
+  position: relative;
+  z-index: 1;
+  align-self: start;
+  overflow: hidden;
+  border: 5px solid var(--white);
+  border-radius: 90px 90px 24px 24px;
+  background: var(--white);
+  box-shadow: 0 15px 38px rgba(25, 63, 58, 0.15);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.place-card--two { margin-top: 78px; }
+.place-card--three { margin-top: 18px; }
+.place-card--four { margin-top: 92px; }
+.place-card:hover, .place-card:focus-visible { transform: translateY(-8px) rotate(-1deg); box-shadow: 0 24px 52px rgba(25, 63, 58, 0.24); }
+.place-card img { width: 100%; aspect-ratio: 1.15 / 1; object-fit: cover; }
+.place-card > div { padding: 17px 18px 21px; }
+.place-card span { color: var(--tangerine); font-size: 11px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.place-card h3 { margin-top: 4px; font-size: 25px; }
+.place-card p { margin: 7px 0 0; color: var(--ink-soft); font-size: 14px; }
+
+.all-places {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 36px;
+  align-items: center;
+  margin-top: 58px;
+  padding: 30px;
+  border: 2px solid var(--forest);
+  border-radius: 30px;
+  background: var(--leaf-pale);
+}
+
+.all-places h3 { max-width: 18ch; font-size: 28px; }
+.all-places ul { display: flex; flex-wrap: wrap; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.all-places li { padding: 9px 13px; border: 1px solid rgba(22, 60, 56, 0.25); border-radius: 999px; background: rgba(255, 255, 255, 0.68); font-size: 14px; font-weight: 750; }
+
+.conditions {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 30px;
+  background: var(--sky);
+}
+
+.conditions h3 { font-size: 28px; }
+.conditions ul { display: grid; gap: 8px; margin: 16px 0 0; padding-left: 21px; }
+.conditions li::marker { color: var(--tangerine); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { padding: 12px 0; font-weight: 800; cursor: pointer; }
+.faq p { margin: -2px 0 14px; color: var(--ink-soft); font-size: 14px; }
+.faq a { color: var(--forest); font-weight: 750; }
+
+.closing-cta { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-top: 28px; padding: 24px 28px; border-radius: 28px; color: var(--white); background: var(--forest); }
+.closing-cta span { display: block; color: var(--sun); font-size: 12px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.closing-cta strong { display: block; margin-top: 4px; font: 900 clamp(22px, 2vw, 30px)/1.1 "Trebuchet MS", sans-serif; }
+.closing-cta a { flex: 0 0 auto; }
+.closing-cta a:hover { color: var(--forest); background: var(--white); transform: translateY(-2px); }
+
+.site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px max(24px, calc((100vw - 1240px) / 2)); color: rgba(255, 255, 255, 0.7); background: var(--forest-deep); font-size: 13px; }
+.mobile-cta { display: none; }
+
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
+.js .reveal[data-reveal-delay="1"] { transition-delay: 90ms; }
+.js .reveal[data-reveal-delay="2"] { transition-delay: 180ms; }
+.js .reveal[data-reveal-delay="3"] { transition-delay: 270ms; }
+.js .reveal.is-visible { opacity: 1; transform: translateY(0); }
+.js .place-card--two.reveal.is-visible { transform: translateY(78px); }
+.js .place-card--three.reveal.is-visible { transform: translateY(18px); }
+.js .place-card--four.reveal.is-visible { transform: translateY(92px); }
+.js .place-card--two.reveal.is-visible:hover, .js .place-card--two.reveal.is-visible:focus-visible { transform: translateY(70px) rotate(-1deg); }
+.js .place-card--three.reveal.is-visible:hover, .js .place-card--three.reveal.is-visible:focus-visible { transform: translateY(10px) rotate(-1deg); }
+.js .place-card--four.reveal.is-visible:hover, .js .place-card--four.reveal.is-visible:focus-visible { transform: translateY(84px) rotate(-1deg); }
+
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 0.8fr 1.2fr; gap: 22px; }
+  .tariff-strip { grid-template-columns: 1fr 1fr; }
+  .tariff-copy { grid-column: 1 / -1; }
+  .trail-board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trail-line { display: none; }
+  .place-card--two, .place-card--three, .place-card--four { margin-top: 0; }
+  .js .place-card--two.reveal.is-visible,
+  .js .place-card--three.reveal.is-visible,
+  .js .place-card--four.reveal.is-visible { transform: translateY(0); }
+}
+
+@media (max-width: 760px) {
+  body { font-size: 16px; padding-bottom: 74px; }
+  .site-header { grid-template-columns: 1fr auto; width: calc(100% - 32px); min-height: 76px; }
+  .brand img { width: 120px; }
+  .header-note { display: none; }
+  .header-buy { padding: 9px 13px; font-size: 13px; }
+
+  .hero { display: block; min-height: auto; padding: 100px 16px 34px; }
+  .hero-copy { padding: 0 5px 22px; }
+  h1 { max-width: 11ch; font-size: clamp(42px, 13vw, 60px); }
+  .hero-lead { margin-top: 16px; font-size: 17px; }
+  .film-frame { border-width: 5px; border-radius: 30% 30% 18px 18px / 10% 10% 18px 18px; }
+  .hero-video { height: 55svh; min-height: 370px; object-position: 52% center; }
+  .film-stamp { width: 94px; }
+  .film-stamp span { font-size: 42px; }
+  .video-toggle-text { display: none; }
+  .tariff-strip { grid-template-columns: 1fr 1fr; margin-top: 16px; padding: 14px; }
+  .tariff-copy { padding: 4px 4px 8px; }
+  .price-button { min-height: 66px; padding: 10px 12px; }
+  .payment-note { margin-top: 14px; text-align: left; }
+
+  .trail { min-height: auto; padding: 72px 16px 42px; }
+  .trail-heading { display: block; margin-bottom: 28px; }
+  .trail-heading h2 { font-size: 44px; }
+  .trail-heading > p { margin-top: 16px; }
+  .trail-board { grid-template-columns: 1fr; gap: 14px; min-height: 0; padding-top: 0; }
+  .place-card { display: grid; grid-template-columns: 42% 58%; border-width: 4px; border-radius: 22px; }
+  .place-card img { height: 100%; aspect-ratio: auto; }
+  .place-card > div { padding: 18px; }
+  .place-card p { font-size: 13px; }
+
+  .all-places { grid-template-columns: 1fr; gap: 18px; margin-top: 28px; padding: 22px 20px; border-radius: 24px; }
+  .all-places h3 { font-size: 25px; }
+  .all-places li { padding: 8px 11px; font-size: 13px; }
+  .conditions { grid-template-columns: 1fr; padding: 22px 20px; border-radius: 24px; }
+  .conditions h3 { font-size: 25px; }
+  .conditions ul { padding-left: 18px; font-size: 14px; }
+  .closing-cta { display: none; }
+  .site-footer { display: grid; padding: 22px 16px; }
+
+  .mobile-cta {
+    position: fixed;
+    z-index: 50;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 58px;
+    padding: 10px 18px;
+    border: 2px solid rgba(255, 255, 255, 0.66);
+    border-radius: 19px;
+    color: var(--white);
+    background: var(--tangerine);
+    box-shadow: 0 12px 34px rgba(13, 45, 42, 0.4);
+    text-decoration: none;
+  }
+  .mobile-cta span { font-size: 13px; font-weight: 700; }
+  .mobile-cta strong { font: 900 18px/1 "Trebuchet MS", sans-serif; }
+}
+
+@media (max-width: 430px) {
+  .tariff-strip { grid-template-columns: 1fr; }
+  .tariff-copy { grid-column: auto; }
+  .place-card { grid-template-columns: 38% 62%; }
+  .place-card p { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}

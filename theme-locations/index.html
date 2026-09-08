@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="8 тематических локаций Парка «Сказка» в одном билете. Тариф на будни и выходные с прямым переходом к оплате.">
+  <meta name="theme-color" content="#173e3a">
+  <title>Тематические локации Парка «Сказка»</title>
+  <link rel="preload" href="assets/hero-poster.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="tracking-config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="theme-locations">
+  <a class="skip-link" href="#theme-tickets">К тарифам</a>
+
+  <header class="site-header">
+    <a class="brand" href="https://parkskazka.com/" aria-label="Перейти на сайт Парка Сказка">
+      <img src="assets/skazka-logo.png" alt="Парк Сказка" width="146" height="63">
+    </a>
+    <p class="header-note">Маршрут по восьми удивительным мирам</p>
+    <a class="header-buy" href="#theme-tickets">Выбрать день</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="theme-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Один билет для сопровождения</p>
+        <h1 id="theme-title"><span>8</span> тематических локаций в одном билете</h1>
+        <p class="hero-lead">Динозавры, животные и птицы — собирайте свой маршрут без отдельного билета в каждую включённую локацию.</p>
+      </div>
+
+      <div class="film-frame reveal" data-reveal-delay="1">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.webp" aria-label="Прогулка по Парку Сказка">
+          <source src="assets/park-day.mp4" type="video/mp4">
+        </video>
+        <button class="video-toggle" type="button" aria-pressed="false" aria-label="Остановить видео">
+          <span aria-hidden="true">Ⅱ</span><span class="video-toggle-text">Пауза</span>
+        </button>
+        <div class="film-stamp"><span>8</span><small>точек маршрута</small></div>
+      </div>
+
+      <div class="tariff-strip reveal" id="theme-tickets" data-reveal-delay="2" aria-label="Тарифы тематического билета">
+        <div class="tariff-copy">
+          <span>Тематические локации</span>
+          <strong>1 человек · до конца дня</strong>
+        </div>
+        <a class="price-button" data-goal="theme_weekday" href="https://pay.parkskazka.com/goods/13166410?quantity=1">
+          <span>Купить: будни</span><strong>2 200 ₽</strong>
+        </a>
+        <a class="price-button price-button--weekend" data-goal="theme_weekend" href="https://pay.parkskazka.com/goods/13166459?quantity=1">
+          <span>Купить: выходные</span><strong>2 800 ₽</strong>
+        </a>
+      </div>
+
+      <p class="payment-note">Оплата проходит на pay.parkskazka.com. После оплаты QR-код придёт на указанный email.</p>
+    </section>
+
+    <section class="trail" aria-labelledby="trail-title">
+      <div class="trail-heading reveal">
+        <div>
+          <p class="eyebrow">Ваш маршрут</p>
+          <h2 id="trail-title">Из древнего мира — к тем, кто ждёт знакомства</h2>
+        </div>
+        <p>Наведите курсор или коснитесь карточки: след соединит четыре яркие точки, а полный перечень останется рядом.</p>
+      </div>
+
+      <div class="trail-board">
+        <svg class="trail-line" viewBox="0 0 1000 300" aria-hidden="true" preserveAspectRatio="none">
+          <path d="M34 225 C 180 20, 305 20, 412 160 S 650 330, 777 135 S 910 45, 970 92" />
+        </svg>
+
+        <article class="place-card place-card--one reveal" tabindex="0">
+          <img src="assets/dino.webp" alt="Дино парк в Парке Сказка" width="960" height="640" loading="lazy">
+          <div><span>Шаг 1</span><h3>Дино парк</h3><p>Большие открытия начинаются с очень больших следов.</p></div>
+        </article>
+        <article class="place-card place-card--two reveal" data-reveal-delay="1" tabindex="0">
+          <img src="assets/alpaca.webp" alt="Альпака парк в Парке Сказка" width="960" height="640" loading="lazy">
+          <div><span>Шаг 2</span><h3>Альпака парк</h3><p>Спокойная остановка для общения и семейных фотографий.</p></div>
+        </article>
+        <article class="place-card place-card--three reveal" data-reveal-delay="2" tabindex="0">
+          <img src="assets/aviarium.webp" alt="Парк птиц Авиариум" width="960" height="640" loading="lazy">
+          <div><span>Шаг 3</span><h3>Авиариум</h3><p>Экзотические птицы и пауза среди зелени.</p></div>
+        </article>
+        <article class="place-card place-card--four reveal" data-reveal-delay="3" tabindex="0">
+          <img src="assets/enotiya.webp" alt="Зоодом Страна ЕНОТиЯ" width="960" height="640" loading="lazy">
+          <div><span>Шаг 4</span><h3>Страна ЕНОТиЯ</h3><p>Финальная встреча с любопытными обитателями зоодома.</p></div>
+        </article>
+      </div>
+
+      <div class="all-places reveal">
+        <div>
+          <p class="eyebrow">Восемь локаций</p>
+          <h3>Все названия — из официального прайс-листа</h3>
+        </div>
+        <ul aria-label="Список тематических локаций">
+          <li>Айва парк</li>
+          <li>Парк птиц Авиариум</li>
+          <li>Страус парк</li>
+          <li>Альпака парк</li>
+          <li>Дино парк</li>
+          <li>Дино Сафари</li>
+          <li>Зоодом «Страна ЕНОТиЯ»</li>
+          <li>Хаски Лэнд</li>
+        </ul>
+      </div>
+
+      <div class="conditions reveal">
+        <div class="condition-summary">
+          <h3>Коротко об условиях</h3>
+          <ul>
+            <li>Будний тариф действует с понедельника по пятницу, кроме официальных праздников.</li>
+            <li>Выходной тариф действует в субботу, воскресенье, праздники и будни.</li>
+            <li>На некоторых локациях детям требуется сопровождение взрослого.</li>
+            <li>Дополнительные услуги оплачиваются отдельно, если иное не указано в тарифе.</li>
+            <li>Работа локаций зависит от погодных и технических условий.</li>
+          </ul>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Когда активируется билет?</summary>
+            <p>При первом проходе. После этого билет действует до конца текущего дня.</p>
+          </details>
+          <details>
+            <summary>Можно ли вернуть билет?</summary>
+            <p>После списания первого прохода билет возврату не подлежит.</p>
+          </details>
+          <details>
+            <summary>Нужна помощь?</summary>
+            <p><a href="tel:+74951336556">+7 495 133-65-56</a> · <a href="mailto:info@parkskazka.com">info@parkskazka.com</a> · <a href="https://telegram.me/+79779804366">написать в поддержку</a></p>
+          </details>
+        </div>
+      </div>
+
+      <div class="closing-cta reveal">
+        <div><span>Маршрут готов</span><strong>Осталось выбрать день посещения.</strong></div>
+        <a href="#theme-tickets">К тарифам</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Москва, Крылатская улица, 18</span>
+    <span>© 2026 ООО «Парк Сказка»</span>
+  </footer>
+
+  <a class="mobile-cta" data-goal="theme_mobile_primary" href="https://pay.parkskazka.com/goods/13166410?quantity=1">
+    <span>Тематический билет</span><strong>от 2 200 ₽</strong>
+  </a>
+</body>
+</html>

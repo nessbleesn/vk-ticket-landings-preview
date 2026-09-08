@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ВК-лендинги — Парк Сказка</title>
+  <style>
+    :root { color-scheme: light; font-family: Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: #f4f0e8; color: #17372f; }
+    main { width: min(760px, 100%); }
+    img { width: 160px; height: auto; display: block; margin-bottom: 28px; }
+    h1 { margin: 0 0 12px; font-size: clamp(32px, 7vw, 58px); line-height: .95; }
+    p { margin: 0 0 30px; color: #53645f; font-size: 18px; }
+    nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    a { display: grid; min-height: 150px; align-content: end; padding: 24px; border-radius: 24px; color: white; text-decoration: none; font-size: 25px; font-weight: 700; box-shadow: 0 14px 34px rgba(23,55,47,.14); transition: transform .2s ease; }
+    a:first-child { background: #ed5c43; }
+    a:last-child { background: #174f3f; }
+    a:hover, a:focus-visible { transform: translateY(-3px); }
+    a:focus-visible { outline: 4px solid #ffcf45; outline-offset: 4px; }
+    small { display: block; margin-top: 10px; font-size: 15px; font-weight: 400; opacity: .85; }
+    @media (max-width: 620px) { nav { grid-template-columns: 1fr; } a { min-height: 130px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="family-ticket/assets/skazka-logo.png" alt="Парк Сказка">
+    <h1>Временные версии лендингов</h1>
+    <p>Выберите страницу для просмотра.</p>
+    <nav aria-label="Лендинги">
+      <a href="family-ticket/">Семейный билет<small>Тарифы на троих и четверых</small></a>
+      <a href="theme-locations/">Тематические локации<small>Единый билет на восемь локаций</small></a>
+    </nav>
+  </main>
+</body>
+</html>
+

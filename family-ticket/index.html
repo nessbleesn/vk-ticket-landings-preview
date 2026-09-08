@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Семейный билет в Парк «Сказка» на 3 или 4 человек. Выберите тариф на будни или выходные и перейдите к оплате.">
+  <meta name="theme-color" content="#ff644f">
+  <title>Семейный билет в Парк «Сказка»</title>
+  <link rel="preload" href="assets/hero-poster.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="tracking-config.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-page="family-ticket">
+  <a class="skip-link" href="#tickets">К тарифам</a>
+
+  <header class="site-header">
+    <a class="brand" href="https://parkskazka.com/" aria-label="Перейти на сайт Парка Сказка">
+      <img src="assets/skazka-logo.png" alt="Парк Сказка" width="146" height="63">
+    </a>
+    <p class="header-note">Семейный день без лишних решений</p>
+    <a class="header-buy" href="#tickets">Выбрать билет</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="family-title">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Один билет · целый день · вся семья</p>
+        <h1 id="family-title">Один день в «Сказке» для троих или четверых</h1>
+        <p class="hero-lead">59 развлечений в каждом билете. Выберите состав семьи и день посещения — после оплаты QR-код придёт на email.</p>
+      </div>
+
+      <div class="film-frame reveal" data-reveal-delay="1">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.webp" aria-label="Семейный день в Парке Сказка">
+          <source src="assets/park-day.mp4" type="video/mp4">
+        </video>
+        <button class="video-toggle" type="button" aria-pressed="false" aria-label="Остановить видео">
+          <span aria-hidden="true">Ⅱ</span><span class="video-toggle-text">Пауза</span>
+        </button>
+        <div class="film-caption" aria-hidden="true">
+          <span>улыбнуться</span><span>прокатиться</span><span>запомнить</span>
+        </div>
+      </div>
+
+      <div class="ticket-zone" id="tickets" aria-label="Тарифы семейного билета">
+        <article class="ticket-card reveal" data-reveal-delay="2">
+          <div class="ticket-topline"><span>Семейный</span><strong>3 человека</strong></div>
+          <p class="ticket-includes">3 билета «Стандарт» · 59 локаций</p>
+          <div class="ticket-prices">
+            <a class="price-button" data-goal="family_3_weekday" href="https://pay.parkskazka.com/goods/13166429?quantity=1">
+              <span>Будни</span><strong>8 900 ₽</strong>
+            </a>
+            <a class="price-button price-button--weekend" data-goal="family_3_weekend" href="https://pay.parkskazka.com/goods/13166430?quantity=1">
+              <span>Выходные</span><strong>14 200 ₽</strong>
+            </a>
+          </div>
+        </article>
+
+        <article class="ticket-card ticket-card--sun reveal" data-reveal-delay="3">
+          <div class="ticket-topline"><span>Семейный</span><strong>4 человека</strong></div>
+          <p class="ticket-includes">4 билета «Стандарт» · 59 локаций</p>
+          <div class="ticket-prices">
+            <a class="price-button" data-goal="family_4_weekday" href="https://pay.parkskazka.com/goods/13166432?quantity=1">
+              <span>Будни</span><strong>11 400 ₽</strong>
+            </a>
+            <a class="price-button price-button--weekend" data-goal="family_4_weekend" href="https://pay.parkskazka.com/goods/13166434?quantity=1">
+              <span>Выходные</span><strong>18 400 ₽</strong>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="payment-note">Оплата проходит на pay.parkskazka.com. Билет активируется при первом проходе и действует до конца этого дня.</p>
+    </section>
+
+    <section class="day-route" aria-labelledby="route-title">
+      <div class="route-heading reveal">
+        <p class="eyebrow">Ваш день в Сказке</p>
+        <h2 id="route-title">Три главы одного семейного приключения</h2>
+      </div>
+
+      <div class="route-grid">
+        <article class="route-step reveal">
+          <figure>
+            <img src="assets/ride.webp" alt="Семейный аттракцион в Парке Сказка" width="900" height="600" loading="lazy">
+          </figure>
+          <div class="route-copy"><span>Сначала</span><h3>Прокатиться</h3><p>Выберите аттракционы по настроению и возвращайтесь к любимым после перерыва.</p></div>
+        </article>
+        <article class="route-step reveal" data-reveal-delay="1">
+          <figure>
+            <img src="assets/alpaca.webp" alt="Альпака в тематической локации Парка Сказка" width="900" height="600" loading="lazy">
+          </figure>
+          <div class="route-copy"><span>Потом</span><h3>Познакомиться</h3><p>Загляните в тематические парки и найдите тех, кого хочется погладить и сфотографировать.</p></div>
+        </article>
+        <article class="route-step reveal" data-reveal-delay="2">
+          <figure>
+            <img src="assets/ferris.webp" alt="Колесо обозрения в Парке Сказка" width="900" height="600" loading="lazy">
+          </figure>
+          <div class="route-copy"><span>Под конец</span><h3>Удивиться</h3><p>Поднимитесь над парком и соберите общий финальный кадр семейного дня.</p></div>
+        </article>
+      </div>
+
+      <div class="conditions reveal">
+        <div class="condition-summary">
+          <h3>Коротко об условиях</h3>
+          <ul>
+            <li>Будний тариф действует с понедельника по пятницу, кроме официальных праздников.</li>
+            <li>Выходной тариф действует в субботу, воскресенье, праздники и будни.</li>
+            <li>Дополнительные услуги оплачиваются отдельно, если иное не указано в тарифе.</li>
+            <li>Работа развлечений зависит от погодных и технических условий.</li>
+          </ul>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Когда и куда придёт билет?</summary>
+            <p>Сразу после оплаты на указанный email придёт письмо с QR-кодом.</p>
+          </details>
+          <details>
+            <summary>Можно ли вернуть билет?</summary>
+            <p>После списания первого прохода билет возврату не подлежит.</p>
+          </details>
+          <details>
+            <summary>Нужна помощь?</summary>
+            <p><a href="tel:+74951336556">+7 495 133-65-56</a> · <a href="mailto:info@parkskazka.com">info@parkskazka.com</a> · <a href="https://telegram.me/+79779804366">написать в поддержку</a></p>
+          </details>
+        </div>
+      </div>
+
+      <div class="closing-cta reveal">
+        <div><span>Семья собрана?</span><strong>Выберите билет — дальше начинается «Сказка».</strong></div>
+        <a href="#tickets">К тарифам</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Москва, Крылатская улица, 18</span>
+    <span>© 2026 ООО «Парк Сказка»</span>
+  </footer>
+
+  <a class="mobile-cta" data-goal="family_mobile_primary" href="https://pay.parkskazka.com/goods/13166429?quantity=1">
+    <span>Семейный на 3</span><strong>от 8 900 ₽</strong>
+  </a>
+</body>
+</html>

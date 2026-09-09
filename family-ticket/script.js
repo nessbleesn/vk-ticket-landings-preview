@@ -19,6 +19,13 @@ window.parkskazkaTrackGoal = (goal, payload = {}) => {
   const ymId = window.PARK_TRACKING?.yandexMetrikaId;
   if (ymId && typeof window.ym === "function") window.ym(ymId, "reachGoal", goal, event);
 
+  const vkPixelId = window.PARK_TRACKING?.vkPixelId;
+  const purchaseGoal = window.PARK_TRACKING?.purchaseGoal;
+  if (vkPixelId && purchaseGoal) {
+    window._tmr = window._tmr || [];
+    window._tmr.push({ type: "reachGoal", id: vkPixelId, goal: purchaseGoal });
+  }
+
   if (window.VK?.Retargeting?.Event) window.VK.Retargeting.Event(goal);
   window.dispatchEvent(new CustomEvent("parkskazka:goal", { detail: event }));
 };

@@ -44,3 +44,18 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
+
+const trailBoard = document.querySelector(".trail-board");
+
+if (trailBoard) {
+  if ("IntersectionObserver" in window && !reducedMotion.matches) {
+    const routeObserver = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      trailBoard.classList.add("is-route-active");
+      routeObserver.disconnect();
+    }, { threshold: 0.18 });
+    routeObserver.observe(trailBoard);
+  } else {
+    trailBoard.classList.add("is-route-active");
+  }
+}

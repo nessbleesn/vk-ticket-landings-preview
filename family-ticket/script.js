@@ -11,7 +11,7 @@ document.querySelectorAll("a[href*='pay.parkskazka.com']").forEach((link) => {
   link.href = url.toString();
 });
 
-window.parkskazkaTrackGoal = (goal, payload = {}) => {
+window.parkskazkaTrackGoal = (goal, payload = {}, { purchase = true } = {}) => {
   const event = { event: "parkskazka_goal", goal, page: document.body.dataset.page, ...payload };
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(event);
@@ -21,7 +21,7 @@ window.parkskazkaTrackGoal = (goal, payload = {}) => {
 
   const vkPixelId = window.PARK_TRACKING?.vkPixelId;
   const purchaseGoal = window.PARK_TRACKING?.purchaseGoal;
-  if (vkPixelId && purchaseGoal) {
+  if (purchase && vkPixelId && purchaseGoal) {
     window._tmr = window._tmr || [];
     window._tmr.push({ type: "reachGoal", id: vkPixelId, goal: purchaseGoal });
   }
@@ -32,7 +32,19 @@ window.parkskazkaTrackGoal = (goal, payload = {}) => {
 
 document.querySelectorAll("[data-goal]").forEach((element) => {
   element.addEventListener("click", () => {
-    window.parkskazkaTrackGoal(element.dataset.goal, { destination: element.href });
+    window.parkskazkaTrackGoal(element.dataset.goal, {
+      destination: element.href,
+      product_id: element.dataset.productId,
+      tariff: element.dataset.tariff,
+      value: Number(element.dataset.price),
+      currency: "RUB",
+    });
+  });
+});
+
+document.querySelectorAll("[data-micro-goal]").forEach((element) => {
+  element.addEventListener("click", () => {
+    window.parkskazkaTrackGoal(element.dataset.microGoal, { destination: element.href }, { purchase: false });
   });
 });
 
@@ -63,15 +75,43 @@ const setVideoState = (isPlaying) => {
 };
 
 if (video && videoToggle) {
-  if (reducedMotion.matches) {
-    video.pause();
-    setVideoState(false);
-  }
-  videoToggle.addEventListener("click", async () => {
-    if (video.paused) {
+  const saveData = Boolean(navigator.connection?.saveData);
+  const desktopViewport = window.matchMedia("(min-width: 761px)");
+  setVideoState(false);
+
+  const startVideo = async () => {
+    if (reducedMotion.matches || saveData || !desktopViewport.matches || !video.paused) return;
+    try {
       await video.play();
       setVideoState(true);
+    } catch {
+      setVideoState(false);
+    }
+  };
+
+  if (!reducedMotion.matches && !saveData && desktopViewport.matches) {
+    window.addEventListener("load", () => {
+      if ("requestIdleCallback" in window) window.requestIdleCallback(startVideo, { timeout: 1800 });
+      else window.setTimeout(startVideo, 600);
+    }, { once: true });
+  }
+
+  videoToggle.addEventListener("click", async () => {
+    if (video.paused) {
+      try {
+        await video.play();
+        setVideoState(true);
+      } catch {
+        setVideoState(false);
+      }
     } else {
+      video.pause();
+      setVideoState(false);
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && !video.paused) {
       video.pause();
       setVideoState(false);
     }

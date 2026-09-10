@@ -3,11 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="7 тематических локаций Парка «Сказка» в одном билете. Тариф на будни и выходные с прямым переходом к оплате.">
+  <meta name="description" content="Билет для взрослого, сопровождающего ребёнка: 7 тематических парков и Колесо обозрения. Тарифы на будни и выходные.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Парк «Сказка»">
+  <meta property="og:title" content="Тематические парки и Колесо обозрения — билет сопровождения">
+  <meta property="og:description" content="Один билет для взрослого, сопровождающего ребёнка: 7 тематических парков и Колесо обозрения.">
   <meta name="theme-color" content="#173e3a">
   <title>Тематические локации Парка «Сказка»</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
-  <link rel="preload" href="assets/hero-safari.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/hero-safari-900.webp" as="image" imagesrcset="assets/hero-safari-480.webp 480w, assets/hero-safari-900.webp 900w, assets/hero-safari.webp 1800w" imagesizes="(max-width: 760px) 50vw, 34vw" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/onest-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="tracking-config.js"></script>
   <script src="script.js" defer></script>
@@ -21,47 +29,47 @@
     <a class="brand" href="https://parkskazka.com/" aria-label="Перейти на сайт Парка Сказка">
       <img src="assets/skazka-logo.png" alt="Парк Сказка" width="146" height="63">
     </a>
-    <p class="header-note">Маршрут по семи удивительным мирам</p>
+    <p class="header-note">7 тематических парков и Колесо обозрения</p>
     <a class="header-buy" href="#theme-tickets">Выбрать день</a>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="theme-title">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Один билет для сопровождения</p>
-        <h1 id="theme-title"><span class="title-number">7</span><span class="title-words">тематических локаций в одном билете</span></h1>
-        <p class="hero-lead">Динозавры, животные и птицы — собирайте свой маршрут без отдельного билета в каждую включённую локацию.</p>
+        <p class="eyebrow">Для 1 взрослого, сопровождающего ребёнка</p>
+        <h1 id="theme-title"><span class="title-number">7</span><span class="title-words">тематических парков + Колесо обозрения</span></h1>
+        <p class="hero-lead">Билет взрослого действует в семи тематических парках и на Колесе обозрения до конца дня.</p>
       </div>
 
-      <div class="park-collage reveal" data-reveal-delay="1" aria-label="Фотографии тематических парков">
+      <div class="park-collage" role="group" aria-label="Фотографии тематических парков">
         <figure class="park-shot park-shot--safari">
-          <img src="assets/hero-safari.webp" alt="Гости отправляются в Дино Сафари" width="1800" height="1200" fetchpriority="high">
+          <img src="assets/hero-safari-900.webp" srcset="assets/hero-safari-480.webp 480w, assets/hero-safari-900.webp 900w, assets/hero-safari.webp 1800w" sizes="(max-width: 760px) 50vw, 34vw" alt="Гости отправляются в Дино Сафари" width="1800" height="1200" fetchpriority="high">
           <figcaption>Дино Сафари</figcaption>
         </figure>
         <figure class="park-shot park-shot--dino">
-          <img src="assets/hero-dino.webp" alt="Динозавр в Дино Парке" width="1800" height="1200">
+          <img src="assets/hero-dino-900.webp" srcset="assets/hero-dino-480.webp 480w, assets/hero-dino-900.webp 900w, assets/hero-dino.webp 1800w" sizes="(max-width: 760px) 50vw, 26vw" alt="Динозавр в Дино Парке" width="1800" height="1200">
           <figcaption>Дино Парк</figcaption>
         </figure>
         <figure class="park-shot park-shot--aviarium">
-          <img src="assets/hero-aviarium.webp" alt="Сова в Авиариуме" width="1800" height="1003">
+          <img src="assets/hero-aviarium-900.webp" srcset="assets/hero-aviarium-480.webp 480w, assets/hero-aviarium-900.webp 900w, assets/hero-aviarium.webp 1800w" sizes="(max-width: 760px) 50vw, 24vw" alt="Сова в Авиариуме" width="1800" height="1003">
           <figcaption>Авиариум</figcaption>
         </figure>
         <figure class="park-shot park-shot--alpaca">
-          <img src="assets/hero-alpaca.webp" alt="Альпаки в Альпака Парке" width="1800" height="1208">
+          <img src="assets/hero-alpaca-900.webp" srcset="assets/hero-alpaca-480.webp 480w, assets/hero-alpaca-900.webp 900w, assets/hero-alpaca.webp 1800w" sizes="(max-width: 760px) 50vw, 34vw" alt="Альпаки в Альпака Парке" width="1800" height="1208">
           <figcaption>Альпака Парк</figcaption>
         </figure>
-        <div class="film-stamp"><span>7</span><small>точек маршрута</small></div>
+        <div class="film-stamp"><span>7</span><small>парков + Колесо</small></div>
       </div>
 
-      <div class="tariff-strip reveal" id="theme-tickets" data-reveal-delay="2" aria-label="Тарифы тематического билета">
+      <div class="tariff-strip reveal" id="theme-tickets" data-reveal-delay="2" role="group" aria-label="Тарифы билета сопровождения">
         <div class="tariff-copy">
-          <span>Тематические локации</span>
-          <strong>1 человек · до конца дня</strong>
+          <span>Сопровождение ребёнка</span>
+          <strong>1 взрослый · 7 парков + Колесо</strong>
         </div>
-        <a class="price-button" data-goal="theme_weekday" href="https://pay.parkskazka.com/goods/13166410?quantity=1">
+        <a class="price-button" data-goal="theme_weekday" data-product-id="13166410" data-tariff="weekday" data-price="2200" href="https://pay.parkskazka.com/goods/13166410?quantity=1">
           <span>Купить: будни</span><strong>2 200 ₽</strong>
         </a>
-        <a class="price-button price-button--weekend" data-goal="theme_weekend" href="https://pay.parkskazka.com/goods/13166459?quantity=1">
+        <a class="price-button price-button--weekend" data-goal="theme_weekend" data-product-id="13166459" data-tariff="weekend" data-price="2800" href="https://pay.parkskazka.com/goods/13166459?quantity=1">
           <span>Купить: выходные</span><strong>2 800 ₽</strong>
         </a>
       </div>
@@ -82,27 +90,28 @@
           <path class="trail-line__motion" pathLength="1000" d="M-20 48 C110 12 220 14 340 46 S560 82 680 44 S885 8 1020 42" />
         </svg>
 
-        <article class="place-card place-card--one reveal" tabindex="0">
-          <img src="assets/dino.webp" alt="Дино парк в Парке Сказка" width="960" height="640" loading="lazy">
-          <div><span>Шаг 1</span><h3>Дино парк</h3><p>Большие открытия начинаются с очень больших следов.</p></div>
+        <article class="place-card place-card--one reveal">
+          <img src="assets/dino-720.webp" srcset="assets/dino-720.webp 720w, assets/dino.webp 1500w" sizes="(max-width: 760px) calc(100vw - 46px), 50vw" alt="Дино парк в Парке Сказка" width="960" height="640" loading="lazy">
+          <div><span>Шаг 1</span><h3>Дино парк</h3></div>
         </article>
-        <article class="place-card place-card--two reveal" data-reveal-delay="1" tabindex="0">
-          <img src="assets/alpaca.webp" alt="Альпака парк в Парке Сказка" width="960" height="640" loading="lazy">
-          <div><span>Шаг 2</span><h3>Альпака парк</h3><p>Спокойная остановка для общения и семейных фотографий.</p></div>
+        <article class="place-card place-card--two reveal" data-reveal-delay="1">
+          <img src="assets/alpaca-720.webp" srcset="assets/alpaca-720.webp 720w, assets/alpaca.webp 1200w" sizes="(max-width: 760px) calc(100vw - 46px), 50vw" alt="Альпака парк в Парке Сказка" width="960" height="640" loading="lazy">
+          <div><span>Шаг 2</span><h3>Альпака парк</h3></div>
         </article>
-        <article class="place-card place-card--three reveal" data-reveal-delay="2" tabindex="0">
-          <img src="assets/aviarium.webp" alt="Парк птиц Авиариум" width="960" height="640" loading="lazy">
-          <div><span>Шаг 3</span><h3>Авиариум</h3><p>Экзотические птицы и пауза среди зелени.</p></div>
+        <article class="place-card place-card--three reveal" data-reveal-delay="2">
+          <img src="assets/aviarium-720.webp" srcset="assets/aviarium-720.webp 720w, assets/aviarium.webp 1500w" sizes="(max-width: 760px) calc(100vw - 46px), 34vw" alt="Парк птиц Авиариум" width="960" height="640" loading="lazy">
+          <div><span>Шаг 3</span><h3>Авиариум</h3></div>
         </article>
-        <article class="place-card place-card--four reveal" data-reveal-delay="3" tabindex="0">
-          <img src="assets/enotiya.webp" alt="Зоодом Страна ЕНОТиЯ" width="960" height="640" loading="lazy">
-          <div><span>Шаг 4</span><h3>Страна ЕНОТиЯ</h3><p>Финальная встреча с любопытными обитателями зоодома.</p></div>
+        <article class="place-card place-card--four reveal" data-reveal-delay="3">
+          <img src="assets/enotiya-720.webp" srcset="assets/enotiya-720.webp 720w, assets/enotiya.webp 1488w" sizes="(max-width: 760px) calc(100vw - 46px), 66vw" alt="Зоодом Страна ЕНОТиЯ" width="960" height="640" loading="lazy">
+          <div><span>Шаг 4</span><h3>Страна ЕНОТиЯ</h3></div>
         </article>
       </div>
 
       <div class="all-places reveal">
         <div>
           <p class="eyebrow">Семь локаций</p>
+          <div class="included-extra"><span aria-hidden="true">+</span><p><strong>Колесо обозрения</strong><small>тоже входит в билет сопровождения</small></p></div>
         </div>
         <ul aria-label="Список тематических локаций">
           <li><div><strong>Парк птиц Авиариум</strong><p>Пройдите через 16 тематических зон и познакомьтесь с 55 видами пернатых из разных уголков планеты.</p></div></li>
@@ -120,7 +129,8 @@
           <h3>Коротко об условиях</h3>
           <ul>
             <li>Будний тариф действует с понедельника по пятницу, кроме официальных праздников.</li>
-            <li>Выходной тариф действует в субботу, воскресенье, праздники и будни.</li>
+            <li>Выходной тариф действует в субботу, воскресенье и официальные праздничные дни.</li>
+            <li>Билет предназначен для одного взрослого, сопровождающего ребёнка.</li>
             <li>На некоторых локациях детям требуется сопровождение взрослого.</li>
             <li>Дополнительные услуги оплачиваются отдельно, если иное не указано в тарифе.</li>
             <li>Работа локаций зависит от погодных и технических условий.</li>
@@ -130,10 +140,6 @@
           <details>
             <summary>Когда активируется билет?</summary>
             <p>При первом проходе. После этого билет действует до конца текущего дня.</p>
-          </details>
-          <details>
-            <summary>Можно ли вернуть билет?</summary>
-            <p>После списания первого прохода билет возврату не подлежит.</p>
           </details>
           <details>
             <summary>Нужна помощь?</summary>
@@ -151,11 +157,15 @@
 
   <footer class="site-footer">
     <span>Москва, Крылатская улица, 18</span>
+    <nav class="footer-links" aria-label="Правовая информация">
+      <a href="https://parkskazka.com/user-agreement/">Пользовательское соглашение</a>
+      <a href="https://parkskazka.com/o-parke/pravila-parka/">Правила парка</a>
+    </nav>
     <span>© 2026 ООО «Парк Сказка»</span>
   </footer>
 
-  <a class="mobile-cta" data-goal="theme_mobile_primary" href="https://pay.parkskazka.com/goods/13166410?quantity=1">
-    <span>Тематический билет</span><strong>от 2 200 ₽</strong>
+  <a class="mobile-cta" data-micro-goal="theme_tariff_selector_open" href="#theme-tickets">
+    <span>Выбрать день</span><strong>от 2 200 ₽</strong>
   </a>
 </body>
 </html>

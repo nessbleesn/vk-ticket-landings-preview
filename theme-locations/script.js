@@ -11,7 +11,7 @@ document.querySelectorAll("a[href*='pay.parkskazka.com']").forEach((link) => {
   link.href = url.toString();
 });
 
-window.parkskazkaTrackGoal = (goal, payload = {}) => {
+window.parkskazkaTrackGoal = (goal, payload = {}, { purchase = true } = {}) => {
   const event = { event: "parkskazka_goal", goal, page: document.body.dataset.page, ...payload };
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push(event);
@@ -21,7 +21,7 @@ window.parkskazkaTrackGoal = (goal, payload = {}) => {
 
   const vkPixelId = window.PARK_TRACKING?.vkPixelId;
   const purchaseGoal = window.PARK_TRACKING?.purchaseGoal;
-  if (vkPixelId && purchaseGoal) {
+  if (purchase && vkPixelId && purchaseGoal) {
     window._tmr = window._tmr || [];
     window._tmr.push({ type: "reachGoal", id: vkPixelId, goal: purchaseGoal });
   }
@@ -32,7 +32,19 @@ window.parkskazkaTrackGoal = (goal, payload = {}) => {
 
 document.querySelectorAll("[data-goal]").forEach((element) => {
   element.addEventListener("click", () => {
-    window.parkskazkaTrackGoal(element.dataset.goal, { destination: element.href });
+    window.parkskazkaTrackGoal(element.dataset.goal, {
+      destination: element.href,
+      product_id: element.dataset.productId,
+      tariff: element.dataset.tariff,
+      value: Number(element.dataset.price),
+      currency: "RUB",
+    });
+  });
+});
+
+document.querySelectorAll("[data-micro-goal]").forEach((element) => {
+  element.addEventListener("click", () => {
+    window.parkskazkaTrackGoal(element.dataset.microGoal, { destination: element.href }, { purchase: false });
   });
 });
 

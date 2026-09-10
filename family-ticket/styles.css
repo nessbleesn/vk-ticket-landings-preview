@@ -1,8 +1,8 @@
-@font-face { font-family: "Onest"; src: url("assets/fonts/onest-400.ttf") format("truetype"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Onest"; src: url("assets/fonts/onest-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Onest"; src: url("assets/fonts/onest-700.ttf") format("truetype"); font-weight: 700; font-display: swap; }
-@font-face { font-family: "Unbounded"; src: url("assets/fonts/unbounded-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Unbounded"; src: url("assets/fonts/unbounded-700.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("assets/fonts/onest-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("assets/fonts/onest-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("assets/fonts/onest-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Unbounded"; src: url("assets/fonts/unbounded-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Unbounded"; src: url("assets/fonts/unbounded-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 
 :root {
   --ink: #10213f;
@@ -24,14 +24,15 @@ html { color-scheme: light; scroll-behavior: smooth; }
 body { min-width: 320px; margin: 0; overflow-x: hidden; color: var(--ink); background: var(--paper); font: 400 17px/1.5 "Onest", Arial, sans-serif; }
 img, video { display: block; max-width: 100%; }
 a { color: inherit; }
-button, a { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; -webkit-tap-highlight-color: rgba(255, 220, 88, .28); }
 :focus-visible { outline: 4px solid var(--sun); outline-offset: 4px; }
+h1, h2, h3, [id] { scroll-margin-top: 24px; }
 
 .skip-link { position: fixed; z-index: 100; top: 12px; left: 12px; width: 1px; height: 1px; padding: 0; overflow: hidden; color: var(--white); background: var(--ink); clip-path: inset(50%); white-space: nowrap; }
 .skip-link:focus { width: auto; height: auto; padding: 10px 16px; overflow: visible; clip-path: none; }
 
 .site-header { position: absolute; z-index: 20; top: 0; left: 50%; display: grid; grid-template-columns: 180px 1fr auto; align-items: center; width: min(1280px, calc(100% - 48px)); min-height: 92px; border-bottom: 1px solid rgba(16, 33, 63, 0.14); transform: translateX(-50%); }
-.brand { display: inline-flex; width: fit-content; }
+.brand { display: inline-flex; align-items: center; width: fit-content; min-height: 48px; }
 .brand img { width: 145px; height: auto; }
 .header-note { margin: 0; color: var(--ink-soft); font-size: 13px; text-align: center; }
 
@@ -53,7 +54,7 @@ h1 { max-width: 13ch; font-size: clamp(43px, 4.55vw, 68px); line-height: 1.01; }
 .film-frame::before { content: "СЕМЕЙНЫЙ КАДР  •  ПАРК СКАЗКА"; position: absolute; z-index: 3; top: 0; left: 0; padding: 8px 12px; color: var(--ink); background: var(--sun); font: 700 10px/1 "Unbounded", sans-serif; letter-spacing: .05em; }
 .hero-video { width: 100%; height: clamp(380px, 46vh, 500px); object-fit: cover; object-position: 50% 48%; }
 .film-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(10, 25, 49, .68)); pointer-events: none; }
-.video-toggle { position: absolute; z-index: 4; top: 16px; right: 16px; display: inline-flex; gap: 8px; align-items: center; min-height: 40px; padding: 9px 13px; border: 1px solid rgba(16, 33, 63, .18); border-radius: 6px; color: var(--ink); background: rgba(255, 255, 255, .93); font: 700 12px/1 "Onest", sans-serif; cursor: pointer; backdrop-filter: blur(10px); }
+.video-toggle { position: absolute; z-index: 4; top: 16px; right: 16px; display: inline-flex; gap: 8px; align-items: center; min-height: 48px; padding: 11px 15px; border: 1px solid rgba(16, 33, 63, .18); border-radius: 6px; color: var(--ink); background: rgba(255, 255, 255, .93); font: 700 12px/1 "Onest", sans-serif; cursor: pointer; backdrop-filter: blur(10px); }
 .film-caption { position: absolute; z-index: 3; right: 18px; bottom: 16px; left: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; color: var(--white); font: 700 10px/1.2 "Unbounded", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
 .film-caption span:nth-child(2) { text-align: center; }
 .film-caption span:last-child { text-align: right; }
@@ -65,7 +66,7 @@ h1 { max-width: 13ch; font-size: clamp(43px, 4.55vw, 68px); line-height: 1.01; }
 .ticket-card::after { content: ""; position: absolute; top: 50%; right: -12px; width: 22px; height: 22px; border: 2px solid var(--ink); border-right: 0; border-radius: 50% 0 0 50%; background: var(--sky); transform: translateY(-50%); }
 .ticket-topline { grid-area: top; }
 .ticket-topline span { display: block; color: var(--coral-dark); font: 700 10px/1.2 "Unbounded", sans-serif; text-transform: uppercase; }
-.ticket-topline strong { display: block; margin-top: 5px; font: 700 clamp(20px, 1.7vw, 27px)/1.05 "Unbounded", sans-serif; letter-spacing: -.04em; }
+.ticket-topline h2 { display: block; margin-top: 5px; font: 700 clamp(20px, 1.7vw, 27px)/1.05 "Unbounded", sans-serif; letter-spacing: -.04em; }
 .ticket-includes { grid-area: include; margin: 5px 0 0; color: var(--ink-soft); font-size: 12px; }
 .ticket-prices { grid-area: prices; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .price-button { position: relative; display: grid; min-height: 72px; padding: 12px 28px 12px 11px; border: 2px solid var(--coral); border-radius: 7px; color: var(--white); background: var(--coral); text-decoration: none; transition: transform 550ms cubic-bezier(.2,.8,.2,1), box-shadow 550ms cubic-bezier(.2,.8,.2,1); }
@@ -105,6 +106,9 @@ h1 { max-width: 13ch; font-size: clamp(43px, 4.55vw, 68px); line-height: 1.01; }
 .closing-cta strong { display: block; margin-top: 7px; font: 700 clamp(19px, 1.7vw, 26px)/1.2 "Unbounded", sans-serif; }
 .closing-cta a { flex: 0 0 auto; color: var(--ink); border-color: var(--sun); box-shadow: none; }
 .site-footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px max(24px, calc((100vw - 1280px) / 2)); color: rgba(255,255,255,.62); background: #08152b; font-size: 12px; }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
+.footer-links a { color: rgba(255,255,255,.84); text-underline-offset: 3px; }
+.footer-links a:hover { color: var(--sun); }
 .mobile-cta { display: none; }
 
 .js .reveal { opacity: 0; transform: translateY(10px); transition: opacity 600ms ease, transform 600ms cubic-bezier(.2,.8,.2,1); }
@@ -120,11 +124,11 @@ h1 { max-width: 13ch; font-size: clamp(43px, 4.55vw, 68px); line-height: 1.01; }
 }
 
 @media (max-width: 760px) {
-  body { padding-bottom: 76px; font-size: 16px; }
+  body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); font-size: 16px; }
   .site-header { grid-template-columns: 1fr auto; width: calc(100% - 32px); min-height: 76px; }
   .brand img { width: 116px; }
   .header-note { display: none; }
-  .header-buy { min-height: 40px; padding: 8px 11px; border-radius: 6px; box-shadow: 3px 3px 0 var(--ink); font-size: 12px; }
+  .header-buy { min-height: 48px; padding: 8px 11px; border-radius: 6px; box-shadow: 3px 3px 0 var(--ink); font-size: 12px; }
   .header-buy::after { margin-left: 6px; }
   .hero { display: block; min-height: auto; padding: 102px 16px 34px; background: linear-gradient(145deg, transparent 0 33%, rgba(255, 220, 88, .88) 33.1% 34.2%, transparent 34.3%), linear-gradient(180deg, var(--paper) 0 42%, var(--sky) 42% 100%); }
   .hero::before { display: none; }
@@ -136,7 +140,7 @@ h1 { max-width: 13ch; font-size: clamp(43px, 4.55vw, 68px); line-height: 1.01; }
   .film-frame::before { font-size: 8px; }
   .hero-video { height: 48svh; min-height: 330px; object-position: 53% center; }
   .film-caption { font-size: 8px; }
-  .video-toggle { top: 12px; right: 12px; min-height: 36px; }
+  .video-toggle { top: 12px; right: 12px; min-width: 48px; min-height: 48px; justify-content: center; }
   .video-toggle-text { display: none; }
   .ticket-zone { grid-template-columns: 1fr; gap: 16px; margin-top: 22px; }
   .ticket-card { min-height: 0; padding: 18px 16px 18px 88px; border-radius: 9px; box-shadow: 5px 5px 0 var(--ink); }
@@ -159,7 +163,8 @@ h1 { max-width: 13ch; font-size: clamp(43px, 4.55vw, 68px); line-height: 1.01; }
   .conditions ul { grid-template-columns: 1fr; font-size: 13px; }
   .closing-cta { display: none; }
   .site-footer { display: grid; padding: 22px 16px; }
-  .mobile-cta { position: fixed; z-index: 50; right: 12px; bottom: 12px; left: 12px; display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 11px 18px; border: 2px solid var(--ink); border-radius: 8px; color: var(--ink); background: var(--sun); box-shadow: 5px 5px 0 rgba(16,33,63,.86); text-decoration: none; }
+  .footer-links { justify-content: start; }
+  .mobile-cta { position: fixed; z-index: 50; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); left: 12px; display: flex; justify-content: space-between; align-items: center; min-height: 60px; padding: 11px 18px; border: 2px solid var(--ink); border-radius: 8px; color: var(--ink); background: var(--sun); box-shadow: 5px 5px 0 rgba(16,33,63,.86); text-decoration: none; }
   .mobile-cta span { font-size: 12px; font-weight: 700; }
   .mobile-cta strong { font: 700 15px/1 "Unbounded", sans-serif; }
 }

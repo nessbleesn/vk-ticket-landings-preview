@@ -105,8 +105,7 @@ h1 { display: flex; gap: 20px; align-items: center; max-width: 100%; line-height
 .place-card h3 { margin-top: 6px; font-size: clamp(22px,2vw,30px); }
 .place-card p { max-width: 42ch; margin: 8px 0 0; color: rgba(255,255,255,.72); font-size: 13px; }
 
-.all-places { position: relative; z-index: 1; display: grid; grid-template-columns: .7fr 1.3fr; gap: 44px; align-items: start; margin-top: 48px; padding: 34px 0; border-top: 2px solid var(--forest-deep); border-bottom: 2px solid var(--forest-deep); }
-.all-places h3 { max-width: 18ch; font-size: 25px; }
+.all-places { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(140px,.35fr) minmax(0,1.65fr); gap: 44px; align-items: start; margin-top: 48px; padding: 34px 0; border-top: 2px solid var(--forest-deep); border-bottom: 2px solid var(--forest-deep); }
 .all-places ul { counter-reset: locations; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; }
 .all-places li { counter-increment: locations; display: grid; grid-template-columns: 34px 1fr; align-items: start; min-height: 122px; padding: 15px 0 17px; border-bottom: 1px solid var(--line); }
 .all-places li::before { content: counter(locations, decimal-leading-zero); margin-top: 5px; color: var(--tangerine); font: 700 10px/1 "Unbounded", sans-serif; }
@@ -213,7 +212,6 @@ h1 { display: flex; gap: 20px; align-items: center; max-width: 100%; line-height
   .place-card > div { padding: 18px; }
   .place-card h3 { font-size: 23px; }
   .all-places { grid-template-columns: 1fr; gap: 22px; margin-top: 32px; padding: 28px 0; }
-  .all-places h3 { font-size: 22px; }
   .all-places ul { grid-template-columns: 1fr; }
   .all-places li { min-height: 0; }
   .conditions { grid-template-columns: 1fr; gap: 26px; padding: 24px 20px; }

@@ -47,34 +47,3 @@ document.querySelectorAll("[data-micro-goal]").forEach((element) => {
     window.parkskazkaTrackGoal(element.dataset.microGoal, { destination: element.href }, { purchase: false });
   });
 });
-
-const revealItems = document.querySelectorAll(".reveal");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-if ("IntersectionObserver" in window && !reducedMotion.matches) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.12 });
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-}
-
-const trailBoard = document.querySelector(".trail-board");
-
-if (trailBoard) {
-  if ("IntersectionObserver" in window && !reducedMotion.matches) {
-    const routeObserver = new IntersectionObserver((entries) => {
-      if (!entries.some((entry) => entry.isIntersecting)) return;
-      trailBoard.classList.add("is-route-active");
-      routeObserver.disconnect();
-    }, { threshold: 0.18 });
-    routeObserver.observe(trailBoard);
-  } else {
-    trailBoard.classList.add("is-route-active");
-  }
-}

@@ -1,155 +1,59 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Семейный билет в Парк «Сказка» на 3 или 4 человек. Выберите тариф на будни или выходные и перейдите к оплате.">
-  <meta name="robots" content="noindex,nofollow">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Парк «Сказка»">
-  <meta property="og:title" content="Семейный билет в Парк «Сказка»">
-  <meta property="og:description" content="Семейный билет на 3 или 4 человек: 59 развлечений, тарифы на будни и выходные.">
-  <meta name="theme-color" content="#ff644f">
-  <title>Семейный билет в Парк «Сказка»</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
-  <link rel="preload" href="assets/hero-poster-1200.webp" as="image" fetchpriority="high">
-  <link rel="preload" href="assets/fonts/onest-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/unbounded-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <script src="tracking-config.js"></script>
-  <script src="script.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Семейный день в Парке «Сказка»: 59 развлечений в семейном билете на 3 или 4 человек. Точные тарифы на будни и выходные.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:locale" content="ru_RU"><meta property="og:type" content="website"><meta property="og:site_name" content="Парк «Сказка»">
+<meta property="og:title" content="Семейный день в Парке «Сказка»">
+<meta property="og:description" content="59 развлечений для всей семьи. Билеты на 3 или 4 человек, тарифы на будни и выходные.">
+<meta name="theme-color" content="#e6f5fc">
+<title>Семейный билет — Парк «Сказка»</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="preload" href="../family-ticket/assets/fonts/onest-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../family-ticket/assets/fonts/unbounded-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../shared/styles.css">
+<script src="tracking-config.js"></script><script src="script.js" defer></script><script src="../shared/ui.js" defer></script>
 </head>
 <body data-page="family-ticket">
-  <noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3782185;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru"></div></noscript>
-  <noscript><div><img src="https://mc.yandex.ru/watch/37767130" style="position:absolute;left:-9999px;" alt=""></div></noscript>
-  <a class="skip-link" href="#tickets">К тарифам</a>
-
-  <header class="site-header">
-    <a class="brand" href="https://parkskazka.com/" aria-label="Перейти на сайт Парка Сказка">
-      <img src="assets/skazka-logo.png" alt="Парк Сказка" width="146" height="63">
-    </a>
-    <p class="header-note">Семейный день без лишних решений</p>
-    <a class="header-buy" href="#tickets">Выбрать билет</a>
-  </header>
-
-  <main>
-    <section class="hero" aria-labelledby="family-title">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Один билет · целый день · вся семья</p>
-        <h1 id="family-title">Один день в «Сказке» для троих или четверых</h1>
-        <p class="hero-lead">59 развлечений в каждом билете.</p>
-      </div>
-
-      <div class="film-frame">
-        <video class="hero-video" muted loop playsinline preload="none" poster="assets/hero-poster-1200.webp" aria-label="Семейный день в Парке Сказка">
-          <source src="assets/park-day.mp4" type="video/mp4">
-        </video>
-        <button class="video-toggle" type="button" aria-pressed="true" aria-label="Включить видео">
-          <span aria-hidden="true">▶</span><span class="video-toggle-text">Смотреть</span>
-        </button>
-        <div class="film-caption" aria-hidden="true">
-          <span>улыбнуться</span><span>прокатиться</span><span>запомнить</span>
-        </div>
-      </div>
-
-      <div class="ticket-zone" id="tickets" role="group" aria-label="Тарифы семейного билета">
-        <article class="ticket-card reveal" data-reveal-delay="2">
-          <div class="ticket-topline"><span>Семейный</span><h2>3 человека</h2></div>
-          <p class="ticket-includes">3 билета «Стандарт» · 59 локаций</p>
-          <div class="ticket-prices">
-            <a class="price-button" data-goal="family_3_weekday" data-product-id="13166429" data-tariff="weekday" data-price="8900" href="https://pay.parkskazka.com/goods/13166429?quantity=1">
-              <span>Будни</span><strong>8 900 ₽</strong>
-            </a>
-            <a class="price-button price-button--weekend" data-goal="family_3_weekend" data-product-id="13166430" data-tariff="weekend" data-price="14200" href="https://pay.parkskazka.com/goods/13166430?quantity=1">
-              <span>Выходные</span><strong>14 200 ₽</strong>
-            </a>
-          </div>
-        </article>
-
-        <article class="ticket-card ticket-card--sun reveal" data-reveal-delay="3">
-          <div class="ticket-topline"><span>Семейный</span><h2>4 человека</h2></div>
-          <p class="ticket-includes">4 билета «Стандарт» · 59 локаций</p>
-          <div class="ticket-prices">
-            <a class="price-button" data-goal="family_4_weekday" data-product-id="13166432" data-tariff="weekday" data-price="11400" href="https://pay.parkskazka.com/goods/13166432?quantity=1">
-              <span>Будни</span><strong>11 400 ₽</strong>
-            </a>
-            <a class="price-button price-button--weekend" data-goal="family_4_weekend" data-product-id="13166434" data-tariff="weekend" data-price="18400" href="https://pay.parkskazka.com/goods/13166434?quantity=1">
-              <span>Выходные</span><strong>18 400 ₽</strong>
-            </a>
-          </div>
-        </article>
-      </div>
-
-    </section>
-
-    <section class="day-route" aria-labelledby="route-title">
-      <div class="route-heading reveal">
-        <p class="eyebrow">Ваш день в Сказке</p>
-        <h2 id="route-title">Три главы одного семейного приключения</h2>
-      </div>
-
-      <div class="route-grid">
-        <article class="route-step reveal">
-          <figure>
-            <img src="assets/ride-720.webp" srcset="assets/ride-720.webp 720w, assets/ride.webp 1440w" sizes="(max-width: 760px) calc(100vw - 32px), 38vw" alt="Семейный аттракцион в Парке Сказка" width="900" height="600" loading="lazy">
-          </figure>
-          <div class="route-copy"><span>Сначала</span><h3>Прокатиться</h3><p>Выберите аттракционы по настроению и возвращайтесь к любимым после перерыва.</p></div>
-        </article>
-        <article class="route-step reveal" data-reveal-delay="1">
-          <figure>
-            <img src="assets/alpaca-720.webp" srcset="assets/alpaca-720.webp 720w, assets/alpaca.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 28vw" alt="Альпака в тематической локации Парка Сказка" width="900" height="600" loading="lazy">
-          </figure>
-          <div class="route-copy"><span>Потом</span><h3>Познакомиться</h3><p>Загляните в тематические парки и найдите тех, кого хочется погладить и сфотографировать.</p></div>
-        </article>
-        <article class="route-step reveal" data-reveal-delay="2">
-          <figure>
-            <img src="assets/ferris-720.webp" srcset="assets/ferris-720.webp 720w, assets/ferris.webp 1440w" sizes="(max-width: 760px) calc(100vw - 32px), 34vw" alt="Колесо обозрения в Парке Сказка" width="900" height="600" loading="lazy">
-          </figure>
-          <div class="route-copy"><span>Под конец</span><h3>Удивиться</h3><p>Поднимитесь над парком и соберите общий финальный кадр семейного дня.</p></div>
-        </article>
-      </div>
-
-      <div class="conditions reveal">
-        <div class="condition-summary">
-          <h3>Коротко об условиях</h3>
-          <ul>
-            <li>Будний тариф действует с понедельника по пятницу, кроме официальных праздников.</li>
-            <li>Выходной тариф действует в субботу, воскресенье и официальные праздничные дни.</li>
-            <li>Дополнительные услуги оплачиваются отдельно, если иное не указано в тарифе.</li>
-            <li>Работа развлечений зависит от погодных и технических условий.</li>
-          </ul>
-        </div>
-        <div class="faq">
-          <details>
-            <summary>Когда и куда придёт билет?</summary>
-            <p>Сразу после оплаты на указанный email придёт письмо с QR-кодом.</p>
-          </details>
-          <details>
-            <summary>Нужна помощь?</summary>
-            <p><a href="tel:+74951336556">+7 495 133-65-56</a> · <a href="mailto:info@parkskazka.com">info@parkskazka.com</a> · <a href="https://telegram.me/+79779804366">написать в поддержку</a></p>
-          </details>
-        </div>
-      </div>
-
-      <div class="closing-cta reveal">
-        <div><span>Семья собрана?</span><strong>Выберите билет — дальше начинается «Сказка».</strong></div>
-        <a href="#tickets">К тарифам</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <span>Москва, Крылатская улица, 18</span>
-    <nav class="footer-links" aria-label="Правовая информация">
-      <a href="https://parkskazka.com/user-agreement/">Пользовательское соглашение</a>
-      <a href="https://parkskazka.com/o-parke/pravila-parka/">Правила парка</a>
-    </nav>
-    <span>© 2026 ООО «Парк Сказка»</span>
-  </footer>
-
-  <a class="mobile-cta" data-micro-goal="family_tariff_selector_open" href="#tickets">
-    <span>Выбрать состав и день</span><strong>от 8 900 ₽</strong>
-  </a>
-</body>
-</html>
+<noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3782185;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru"></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/37767130" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<a class="skip-link" href="#tickets">К тарифам</a>
+<header class="site-header wrap">
+<a class="brand" href="https://parkskazka.com/" aria-label="На сайт Парка Сказка"><img src="assets/skazka-logo.png" alt="Парк Сказка" width="124" height="36"></a>
+<p class="header-note">Время, которое вы проводите вместе</p>
+<a class="header-buy" href="https://prices.parkskazka.com/">Все билеты</a>
+</header>
+<aside class="season-notice wrap" aria-label="График работы парка"><span>График парка</span><p>С 5 по 31 октября — <strong>пятница, суббота и воскресенье.</strong></p></aside>
+<main>
+<section class="hero wrap" aria-labelledby="family-title">
+<div class="hero-copy"><p class="eyebrow">Семейный билет · на 3 или 4 человек</p><h1 id="family-title"><span>Семейный день</span><span>в «Сказке»</span></h1><p class="hero-lead">59 развлечений, чтобы смеяться, удивляться и быть вместе. Любимые — без лимита посещений.</p><span class="included-label">Все 59 развлечений включены в билет</span><ul class="benefits" aria-label="Развлечения в билете"><li><strong>16</strong>семейных</li><li><strong>12</strong>детских</li><li><strong>6</strong>интерактивных</li><li><strong>18</strong>экстремальных</li><li><strong>7</strong>тематических парков</li></ul></div>
+<div class="gallery-block"><div class="gallery" data-gallery role="group" aria-label="Фотогалерея">
+<div class="gallery-stage">
+<figure class="gallery-slide" data-name="Ваш семейный день"><img src="assets/hero-poster-480.webp" srcset="assets/hero-poster-480.webp 480w, assets/hero-poster-1200.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 48vw" alt="Время вместе в Парке «Сказка»" width="1200" height="800" draggable="false" fetchpriority="high"><figcaption>Ваш семейный день</figcaption></figure>
+<figure class="gallery-slide" data-name="Аттракционы для всей семьи" hidden><img src="assets/ride-720.webp" srcset="assets/ride-720.webp 720w, assets/ride.webp 1440w" sizes="(max-width: 760px) calc(100vw - 32px), 48vw" alt="Семейный аттракцион в Парке «Сказка»" width="1200" height="800" draggable="false" loading="lazy"><figcaption>Аттракционы для всей семьи</figcaption></figure>
+<figure class="gallery-slide" data-name="Встречи с альпаками" hidden><img src="assets/alpaca-720.webp" srcset="assets/alpaca-720.webp 720w, assets/alpaca.webp 1200w" sizes="(max-width: 760px) calc(100vw - 32px), 48vw" alt="Альпака в тематическом парке" width="1200" height="800" draggable="false" loading="lazy"><figcaption>Встречи с альпаками</figcaption></figure>
+<figure class="gallery-slide" data-name="Москва с высоты" hidden><img src="assets/ferris-720.webp" srcset="assets/ferris-720.webp 720w, assets/ferris.webp 1440w" sizes="(max-width: 760px) calc(100vw - 32px), 48vw" alt="Колесо обозрения в Парке «Сказка»" width="1200" height="800" draggable="false" loading="lazy"><figcaption>Москва с высоты</figcaption></figure>
+<div class="gallery-arrows"><button class="gallery-arrow" data-gallery-step="-1" type="button" aria-label="Предыдущая фотография">←</button><button class="gallery-arrow" data-gallery-step="1" type="button" aria-label="Следующая фотография">→</button></div><span class="gallery-counter" aria-hidden="true">1 / 4</span>
+</div>
+<div class="gallery-thumbs" style="--slides:4"><button class="gallery-thumb" type="button" aria-label="Показать: Ваш семейный день" aria-pressed="true"><img src="assets/hero-poster-240.webp" alt="" width="120" height="80" draggable="false" loading="lazy"></button><button class="gallery-thumb" type="button" aria-label="Показать: Аттракционы для всей семьи" aria-pressed="false"><img src="assets/ride-240.webp" alt="" width="120" height="80" draggable="false" loading="lazy"></button><button class="gallery-thumb" type="button" aria-label="Показать: Встречи с альпаками" aria-pressed="false"><img src="assets/alpaca-240.webp" alt="" width="120" height="80" draggable="false" loading="lazy"></button><button class="gallery-thumb" type="button" aria-label="Показать: Москва с высоты" aria-pressed="false"><img src="assets/ferris-240.webp" alt="" width="120" height="80" draggable="false" loading="lazy"></button></div>
+<p class="gallery-status" aria-live="polite" aria-atomic="true">Время вместе в Парке «Сказка»</p>
+</div><div class="hero-actions"><a class="button button--primary" data-micro-goal="family_tariff_selector_open" href="#tickets">Забрать всё включено</a><a class="button button--secondary" href="#routes">Выбрать маршрут ↓</a></div></div>
+<div class="ticket-zone" id="tickets" role="group" aria-label="Тарифы семейного билета">
+<article class="ticket-card"><div class="ticket-topline"><span>Семейный</span><h2>3 человека</h2></div><p class="ticket-includes">3 билета «Стандарт» · 59 развлечений</p><div class="ticket-prices"><a class="price-button" data-goal="family_3_weekday" data-product-id="13166429" data-tariff="weekday" data-price="4450" href="https://pay.parkskazka.com/goods/13166429?quantity=1"><span>Будни</span><strong>4 450 ₽</strong></a><a class="price-button price-button--weekend" data-goal="family_3_weekend" data-product-id="13166430" data-tariff="weekend" data-price="7100" href="https://pay.parkskazka.com/goods/13166430?quantity=1"><span>Выходные</span><strong>7 100 ₽</strong></a></div></article><article class="ticket-card"><div class="ticket-topline"><span>Семейный</span><h2>4 человека</h2></div><p class="ticket-includes">4 билета «Стандарт» · 59 развлечений</p><div class="ticket-prices"><a class="price-button" data-goal="family_4_weekday" data-product-id="13166432" data-tariff="weekday" data-price="5700" href="https://pay.parkskazka.com/goods/13166432?quantity=1"><span>Будни</span><strong>5 700 ₽</strong></a><a class="price-button price-button--weekend" data-goal="family_4_weekend" data-product-id="13166434" data-tariff="weekend" data-price="9200" href="https://pay.parkskazka.com/goods/13166434?quantity=1"><span>Выходные</span><strong>9 200 ₽</strong></a></div></article>
+</div>
+<div class="weather weather--forecast"><div class="weather-heading"><div><strong>Погода на 3 дня</strong><p>Прогноз для Парка «Сказка»</p></div><a href="https://yandex.ru/pogoda/ru?lat=55.768&amp;lon=37.44" target="_blank" rel="noopener">Яндекс Погода ↗</a></div><div class="weather-widget" data-weather-widget data-days="3" aria-busy="true"><p class="weather-status" role="status">Загружаем прогноз…</p><div class="forecast-grid" data-weather-mount role="list" aria-label="Прогноз погоды на три дня"></div><p class="weather-attribution">Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p></div><noscript><p>Откройте Яндекс Погоду по ссылке выше, чтобы посмотреть прогноз.</p></noscript></div>
+</section>
+<section class="explore" id="routes" aria-labelledby="route-title"><div class="wrap">
+<div class="section-heading"><div><p class="eyebrow">Три идеи для вашего дня</p><h2 id="route-title">Выберите свой маршрут</h2></div><p>Откройте маршрут и соберите семейную коллекцию впечатлений.</p></div>
+<div class="route-grid"><button class="route-card" type="button" data-dialog-template="route-ride" data-dialog-goal="family_route_open" aria-haspopup="dialog"><img src="assets/ride-320.webp" srcset="assets/ride-320.webp 320w, assets/ride-720.webp 720w, assets/ride.webp 1200w" sizes="(max-width: 760px) 105px, 30vw" alt="" width="720" height="480" loading="lazy" draggable="false"><span class="route-card-copy"><small>Для любителей аттракционов</small><strong>За яркими эмоциями</strong><span class="route-hint">Карусели, приключения и вид на Москву</span><span class="card-open">Открыть приключение ↗</span></span></button><button class="route-card" type="button" data-dialog-template="route-friends" data-dialog-goal="family_route_open" aria-haspopup="dialog"><img src="assets/alpaca-320.webp" srcset="assets/alpaca-320.webp 320w, assets/alpaca-720.webp 720w, assets/alpaca.webp 1200w" sizes="(max-width: 760px) 105px, 30vw" alt="" width="720" height="480" loading="lazy" draggable="false"><span class="route-card-copy"><small>Для любителей животных</small><strong>К пушистым друзьям</strong><span class="route-hint">Альпаки, птицы и новые знакомства</span><span class="card-open">Открыть приключение ↗</span></span></button><button class="route-card" type="button" data-dialog-template="route-discover" data-dialog-goal="family_route_open" aria-haspopup="dialog"><img src="assets/ferris-320.webp" srcset="assets/ferris-320.webp 320w, assets/ferris-720.webp 720w, assets/ferris.webp 1200w" sizes="(max-width: 760px) 105px, 30vw" alt="" width="720" height="480" loading="lazy" draggable="false"><span class="route-card-copy"><small>Для маленьких исследователей</small><strong>Навстречу открытиям</strong><span class="route-hint">Динозавры, сафари и семейный кадр</span><span class="card-open">Открыть приключение ↗</span></span></button></div>
+<div class="faq-section"><div class="faq-heading"><h2>Вопросы перед прогулкой</h2><p>Всё важное о билетах и посещении — в одном месте.</p></div><div class="faq"><details><summary>В какие дни парк открыт в октябре?</summary><p>С 5 по 31 октября парк работает по пятницам, субботам и воскресеньям. Планируйте посещение на один из этих дней.</p></details><details><summary>Что входит в семейный билет?</summary><p>Три или четыре билета «Стандарт» — по числу гостей. Для каждого включены 59 развлечений: семейные и детские аттракционы, интерактивные локации, экстремальные аттракционы и семь тематических парков.</p></details><details><summary>Маршрут — это отдельный билет?</summary><p>Нет. Это идея прогулки и мини-задания для семьи. Вы можете менять порядок и выбирать другие развлечения из своего тарифа.</p></details><details><summary>Как выбрать будни или выходные?</summary><p>Для октябрьского графика выбирайте будний тариф на пятницу, выходной — на субботу или воскресенье. В официальные праздничные дни действует выходной тариф.</p></details><details><summary>Сколько действует билет?</summary><p>Билет активируется при первом проходе и действует до конца этого дня. Возвращаться к включённым в тариф развлечениям можно в течение дня.</p></details><details><summary>Что оплачивается отдельно?</summary><p>Питание, корм для животных и дополнительные услуги не входят в стоимость, если иное не указано в выбранном тарифе.</p></details><details><summary>Все развлечения будут работать?</summary><p>Работа площадок зависит от погоды и технических условий. Перед поездкой проверьте <a href="https://parkskazka.com/entertainment-traffic-light/">что сейчас работает</a> на сайте парка.</p></details><details><summary>Есть ограничения по возрасту и росту?</summary><p>У каждого аттракциона и парка свои правила допуска. Перед посещением проверьте их на странице площадки и следуйте указаниям сотрудников.</p></details><details><summary>Как получить билет и помощь?</summary><p>После оплаты билет с QR-кодом придёт на указанный email. По вопросам покупки и посещения: <a href="tel:+74951336556">+7 495 133-65-56</a> или <a href="mailto:info@parkskazka.com">info@parkskazka.com</a>.</p></details></div></div>
+<div class="closing-cta"><div><strong>Ваш маршрут начинается здесь</strong><p>Выберите состав семьи и подходящий тариф.</p></div><a class="button button--primary" data-micro-goal="family_tariff_selector_open" href="#tickets">Оплатить маршрут ↗</a></div>
+</div></section>
+<template id="route-ride"><img class="dialog-image" src="assets/ride-720.webp" alt="Для любителей аттракционов" width="720" height="480"><div class="dialog-content"><p class="eyebrow">Семейное приключение</p><h2>За яркими эмоциями</h2><p>Начните с лёгкого, найдите любимый аттракцион и завершите прогулку видом на парк. Темп и порядок выбираете вы.</p><fieldset class="mission-list"><legend>Три задания для вашей команды</legend><label class="mission"><input type="checkbox"><span><strong>1. Выберите первый аттракцион</strong><small>Пусть каждый предложит свой вариант. Проверьте ограничения по росту и возрасту.</small></span></label><label class="mission"><input type="checkbox"><span><strong>2. Найдите семейного фаворита</strong><small>После поездки сравните впечатления: кто смеялся громче всех?</small></span></label><label class="mission"><input type="checkbox"><span><strong>3. Посмотрите на парк сверху</strong><small>На Колесе обозрения найдите места, где уже побывали.</small></span></label></fieldset><p class="mission-status" role="status">Ваши открытия: 0 из 3</p><p class="dialog-note">Это идея прогулки, а не отдельный тариф. Посещение — по правилам площадок и при их работе.</p><div class="dialog-actions"><a class="button button--primary" data-close-dialog href="#tickets">Выбрать билет</a><a class="button button--secondary" href="https://parkskazka.com/o-parke/shema-parka/">Схема парка ↗</a></div></div></template><template id="route-friends"><img class="dialog-image" src="assets/alpaca-720.webp" alt="Для любителей животных" width="720" height="480"><div class="dialog-content"><p class="eyebrow">Семейное приключение</p><h2>К пушистым друзьям</h2><p>Соберите день из тёплых встреч. Наблюдайте за животными, задавайте вопросы сотрудникам и знакомьтесь в спокойном темпе.</p><fieldset class="mission-list"><legend>Три задания для вашей команды</legend><label class="mission"><input type="checkbox"><span><strong>1. Узнайте альпаку уакайа</strong><small>В Альпака Парке обратите внимание на густую мягкую шерсть.</small></span></label><label class="mission"><input type="checkbox"><span><strong>2. Откройте мир птиц</strong><small>В Авиариуме найдите птицу с самым необычным оперением.</small></span></label><label class="mission"><input type="checkbox"><span><strong>3. Познакомьтесь с обитателями ЕНОТиИ</strong><small>Попробуйте вместе вспомнить всех животных, которых увидели.</small></span></label></fieldset><p class="mission-status" role="status">Ваши открытия: 0 из 3</p><p class="dialog-note">Это идея прогулки, а не отдельный тариф. Посещение — по правилам площадок и при их работе.</p><div class="dialog-actions"><a class="button button--primary" data-close-dialog href="#tickets">Выбрать билет</a><a class="button button--secondary" href="https://parkskazka.com/o-parke/shema-parka/">Схема парка ↗</a></div></div></template><template id="route-discover"><img class="dialog-image" src="assets/ferris-720.webp" alt="Для маленьких исследователей" width="720" height="480"><div class="dialog-content"><p class="eyebrow">Семейное приключение</p><h2>Навстречу открытиям</h2><p>Отправьтесь в небольшую экспедицию: познакомьтесь с древним миром, найдите сюрпризы в джунглях и сохраните общий кадр.</p><fieldset class="mission-list"><legend>Три задания для вашей команды</legend><label class="mission"><input type="checkbox"><span><strong>1. Найдите самого большого динозавра</strong><small>В Дино Парке сравните его размер со своим ростом.</small></span></label><label class="mission"><input type="checkbox"><span><strong>2. Отправьтесь в Дино Сафари</strong><small>Во время поездки заметите ли вы заброшенную лабораторию?</small></span></label><label class="mission"><input type="checkbox"><span><strong>3. Сохраните открытие дня</strong><small>Сделайте семейное фото и придумайте ему название.</small></span></label></fieldset><p class="mission-status" role="status">Ваши открытия: 0 из 3</p><p class="dialog-note">Это идея прогулки, а не отдельный тариф. Посещение — по правилам площадок и при их работе.</p><div class="dialog-actions"><a class="button button--primary" data-close-dialog href="#tickets">Выбрать билет</a><a class="button button--secondary" href="https://parkskazka.com/o-parke/shema-parka/">Схема парка ↗</a></div></div></template>
+</main>
+<footer class="site-footer wrap"><span>Москва, Крылатская улица, 18<br><a href="tel:+74951336556">+7 495 133-65-56</a></span><nav class="footer-links" aria-label="Правовая информация"><a href="https://parkskazka.com/user-agreement/">Пользовательское соглашение</a><a href="https://parkskazka.com/o-parke/pravila-parka/">Правила парка</a></nav><span>© 2026 ООО «Парк Сказка»</span></footer>
+<a class="mobile-cta" data-micro-goal="family_tariff_selector_open" href="#tickets"><span>Выбрать семейный билет</span><strong>от 4 450 ₽</strong></a>
+<dialog class="dialog" id="detail-dialog"><div class="dialog-shell"><button class="dialog-close" type="button" aria-label="Закрыть описание" autofocus>×</button><div data-dialog-content></div></div></dialog>
+</body></html>

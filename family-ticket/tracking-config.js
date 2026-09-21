@@ -1,8 +1,9 @@
 (() => {
   const config = {
-    vkPixelId: 3782185,
-    yandexMetrikaId: 37767130,
-    purchaseGoal: "choose_ticket_click"
+    vkPixelId: 3794718,
+    yandexMetrikaId: 107188789,
+    purchaseGoal: "Клик 'Купить билет'",
+    yandexPurchaseGoal: "ticket_click"
   };
 
   window.PARK_TRACKING = Object.freeze(config);
@@ -26,15 +27,17 @@
   };
   window.ym.l = window.ym.l || Date.now();
 
-  if (!isLocalPreview && !Array.from(document.scripts).some((script) => script.src === "https://mc.yandex.ru/metrika/tag.js")) {
+  const metrikaSource = `https://mc.yandex.ru/metrika/tag.js?id=${config.yandexMetrikaId}`;
+  if (!isLocalPreview && !Array.from(document.scripts).some((script) => script.src === metrikaSource)) {
     const metrikaScript = document.createElement("script");
     metrikaScript.async = true;
-    metrikaScript.src = "https://mc.yandex.ru/metrika/tag.js";
+    metrikaScript.src = metrikaSource;
     const firstScript = document.getElementsByTagName("script")[0];
     firstScript.parentNode.insertBefore(metrikaScript, firstScript);
   }
 
   window.ym(config.yandexMetrikaId, "init", {
+    ssr: true,
     webvisor: true,
     clickmap: true,
     ecommerce: "dataLayer",

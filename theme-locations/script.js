@@ -17,7 +17,8 @@ window.parkskazkaTrackGoal = (goal, payload = {}, { purchase = true } = {}) => {
   window.dataLayer.push(event);
 
   const ymId = window.PARK_TRACKING?.yandexMetrikaId;
-  if (ymId && typeof window.ym === "function") window.ym(ymId, "reachGoal", goal, event);
+  const yandexGoal = purchase ? window.PARK_TRACKING?.yandexPurchaseGoal : goal;
+  if (ymId && yandexGoal && typeof window.ym === "function") window.ym(ymId, "reachGoal", yandexGoal, event);
 
   const vkPixelId = window.PARK_TRACKING?.vkPixelId;
   const purchaseGoal = window.PARK_TRACKING?.purchaseGoal;

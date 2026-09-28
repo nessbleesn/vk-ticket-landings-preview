@@ -48,3 +48,20 @@ document.querySelectorAll("[data-micro-goal]").forEach((element) => {
     window.parkskazkaTrackGoal(element.dataset.microGoal, { destination: element.href }, { purchase: false });
   });
 });
+
+const VK_DESTINATION_GOALS = {
+  "prices.parkskazka.com": window.PARK_TRACKING?.pricesClickGoal,
+  "pay.parkskazka.com": window.PARK_TRACKING?.payClickGoal,
+};
+
+document.querySelectorAll("a[href]").forEach((link) => {
+  const goal = VK_DESTINATION_GOALS[new URL(link.href).hostname.toLowerCase()];
+  if (!goal) return;
+
+  link.addEventListener("click", () => {
+    const id = window.PARK_TRACKING?.vkPixelId;
+    if (!id) return;
+    window._tmr = window._tmr || [];
+    window._tmr.push({ type: "reachGoal", id, goal });
+  });
+});

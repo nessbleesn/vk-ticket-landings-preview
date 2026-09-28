@@ -3,7 +3,9 @@
     vkPixelId: 3794718,
     yandexMetrikaId: 107188789,
     purchaseGoal: "Клик 'Купить билет'",
-    yandexPurchaseGoal: "ticket_click"
+    yandexPurchaseGoal: "ticket_click",
+    pricesClickGoal: "click-to-buy-to-prices",
+    payClickGoal: "click-to-buy-to-pay"
   };
 
   window.PARK_TRACKING = Object.freeze(config);
